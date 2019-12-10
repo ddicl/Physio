@@ -10,7 +10,8 @@ import { environment } from '../../../environments/environment';
 })
 export class ClientService {
   private clientsUrl = environment.apiUrl + 'clients';
-  private clientUrl = environment.apiUrl + 'client/'
+  private clientUrl = environment.apiUrl + 'client/';
+  private trainerUrl = environment.apiUrl + 'trainers';
 
   constructor(
     private http: HttpClient
@@ -22,5 +23,9 @@ export class ClientService {
 
   getClient(clientName): Observable<Client> {
     return this.http.get<Client>(this.clientUrl + clientName);
+  }
+
+  getTrainers(): Observable<Client[]> {
+    return this.http.get<Client[]>(this.trainerUrl);
   }
 }

@@ -10,6 +10,7 @@ import { environment } from '../../../environments/environment';
 export class MeetingService {
   private meetingUrl = environment.apiUrl + "meeting/";
   private clientsMeetingsUrl = environment.apiUrl + "meetings/";
+  private addMeetingUrl = environment.apiUrl + "meeting/post";
 
   constructor(
     private http: HttpClient
@@ -21,5 +22,10 @@ export class MeetingService {
 
   getClientsMeetings(clientsEmail): Observable<Meeting[]> {
     return this.http.get<Meeting[]>(this.clientsMeetingsUrl + clientsEmail);
+  }
+
+  addMeeting(meeting: Meeting): Observable<Meeting> {
+    console.log(meeting);
+    return this.http.post<Meeting>(this.addMeetingUrl, meeting);
   }
 }

@@ -20,11 +20,7 @@ export class MeetingComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.authService.globalCurrentClient
-    .subscribe(client => {
-      this.client = client
-      console.log(client);
-    });
+    this.authService.globalCurrentClient.subscribe(client => this.client = client);
     this.getClientsMeetings(this.client.email);
   }
 
