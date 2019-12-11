@@ -14,7 +14,7 @@ import { TrainingGridComponent } from './training-grid/training-grid.component';
 export class PersonalTrainingComponent implements OnInit {
   trainer: Client[] = [{
       _id: "",
-      name: "Mike",
+      name: "",
       password: "",
       email: "",
       age: null,
