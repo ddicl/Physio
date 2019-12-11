@@ -17,5 +17,6 @@ export class AppComponent {
     { path: 'running', label: 'Running' },
     { path: 'personaltraining', label: 'Find Personal Trainers' },
     { path: 'meetings', label: 'Meetings' },
+    { path: 'login', label: 'Logout' }
   ];
 }

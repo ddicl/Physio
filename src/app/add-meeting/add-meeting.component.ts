@@ -71,6 +71,7 @@ export class AddMeetingComponent implements OnInit {
           console.log(meeting);
         }
       )
+      this.router.navigateByUrl('/meetings');
     }
   }
 }

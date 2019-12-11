@@ -62,7 +62,7 @@ export class LoginComponent implements OnInit {
       return;
     } else {
       this.getClient();
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/meetings');
     }
   }
 

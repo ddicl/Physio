@@ -14,7 +14,6 @@ export class MeetingComponent implements OnInit {
   meeting: Meeting;
   meetings: Meeting[];
   displayedColumns: string[] = [
-    'position',
     'name',
     'date',
     'location',
