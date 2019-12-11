@@ -1,4 +1,4 @@
-<form [formGroup]="registerForm" id="register-form" action="index.html" method="post">
+<form [formGroup]="registerForm" id="register-form" (submit)="submit()">
   <h1>Register Today!</h1>
   <mat-form-field appearance="outline">
     <mat-label>First Name</mat-label>
@@ -28,11 +28,12 @@
     <mat-label>Bio</mat-label>
     <input matInput formControlName="bio">
   </mat-form-field>
-  <section>
-    <h3>Role</h3>
-    <mat-checkbox color="primary">Client</mat-checkbox><br>
-    <mat-checkbox color="primary">Trainer</mat-checkbox>
-  </section>
+  <mat-form-field>
+    <mat-select placeholder="Trainer or Client" class="validate" formControlName="role" [value]="role.value">
+      <mat-option value="trainer">Trainer</mat-option>
+      <mat-option value="client">Client</mat-option>
+    </mat-select>
+  </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Age</mat-label>
     <input matInput type="number" formControlName="age">

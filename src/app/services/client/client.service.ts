@@ -12,6 +12,7 @@ export class ClientService {
   private clientsUrl = environment.apiUrl + 'clients';
   private clientUrl = environment.apiUrl + 'client/';
   private trainerUrl = environment.apiUrl + 'trainers';
+  private postClientUrl = environment.apiUrl + 'client/insert';
 
   constructor(
     private http: HttpClient
@@ -31,5 +32,9 @@ export class ClientService {
 
   getTrainer(trainerName): Observable<Client> {
     return this.http.get<Client>(this.clientUrl + trainerName);
+  }
+
+  register(client: Client): Observable<Client> {
+    return this.http.post<Client>(this.postClientUrl, client)
   }
 }
