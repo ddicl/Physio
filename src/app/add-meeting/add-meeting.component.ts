@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup ,Validators} from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Meeting } from '../models/meeting';
 import { Client } from '../models/client';
 import { ClientService } from '../services/client/client.service';
@@ -17,18 +17,21 @@ export class AddMeetingComponent implements OnInit {
   client: Client;
   trainers: Client[];
   meeting: Meeting;
+  trainerEmail;
 
   constructor(
     private authService: AuthService,
     private clientService: ClientService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private meetingService: MeetingService
+    private meetingService: MeetingService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
     this.getTrainers();
     this.authService.globalCurrentClient.subscribe(client => this.client = client);
+    this.trainerEmail = this.route.snapshot.params['trainerEmail'];
 
     this.meetingForm = this.formBuilder.group({
       name: ['', Validators.required],
@@ -36,8 +39,9 @@ export class AddMeetingComponent implements OnInit {
       location: ['', Validators.required],
       goals: ['', Validators.required],
       clientEmail: this.client.email,
-      trainerEmail: ['', Validators.required]
+      trainerEmail: this.trainerEmail
     })
+
   }
 
   getTrainers() {

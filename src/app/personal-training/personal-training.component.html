@@ -10,7 +10,7 @@
     </div>
     <div id="info">
       <button mat-raised-button color="accent" type="submit">
-        <a [routerLink]="['../meeting/add']">Add Meeting</a>
+        <a [routerLink]="['../meeting/add/', this.trainer[0].email]">Add Meeting</a>
       </button>
     </div>
   </div>

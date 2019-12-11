@@ -37,16 +37,17 @@
 
         <p>
           <mat-form-field appearance="standard">
-            <mat-label>clientEmail</mat-label>
-            <input matInput placeholder="clientEmail" class="validate" formControlName="clientEmail">
+            <mat-label>Client Email</mat-label>
+            <input matInput placeholder="Client Email" class="validate" formControlName="clientEmail">
           </mat-form-field>
         </p>
 
-        <mat-form-field>
-          <mat-select placeholder="Trainer Emails" class="validate" formControlName="trainerEmail">
-            <mat-option *ngFor="let trainer of trainers" value="trainer.email">{{trainer.email}}</mat-option>
-          </mat-select>
-        </mat-form-field>
+        <p>
+          <mat-form-field appearance="standard">
+            <mat-label>Trainer Email</mat-label>
+            <input matInput placeholder="Trainer Email" class="validate" formControlName="trainerEmail">
+          </mat-form-field>
+        </p>
 
         <div class="d-flex justify-content-center">
           <button mat-raised-button color="primary" type="submit">Submit</button>
