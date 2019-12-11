@@ -24,6 +24,7 @@ export class AuthService {
   private currentClientSource;
   globalCurrentClient;
   clients: Client[];
+  clientArrayLength = 0;
 
   constructor(
     private clientService: ClientService
@@ -37,6 +38,7 @@ export class AuthService {
       clients => {
         console.log(this.clients);
         this.clients = clients;
+        this.clientArrayLength = this.clients.length;
       }
     )
   }
@@ -44,17 +46,19 @@ export class AuthService {
   login(clientInfo: Client): boolean {
     this.getClients();
     this.currentClient = new Client();
+    console.log(this.clientArrayLength);
 
-    for(var i = 0; i < this.clients.length; i++) {
+    for(var i=0; i < this.clientArrayLength;  i++) {
+      console.log("loop");
       if(this.clients[i].name === clientInfo.name && this.clients[i].password === clientInfo.password) {
+        console.log("hit");
         this.currentClient = this.clients[i];
         this.setCurrentClient(this.currentClient);
         return true;
-      } else {
-        return false;
       }
     }
   }
+
 
   setCurrentClient(client: Client) {
     this.currentClient = client;
