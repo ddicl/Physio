@@ -9,4 +9,5 @@ export class Client {
   sport: string;
   role: string;
   location: string;
+  bio: string;
 }

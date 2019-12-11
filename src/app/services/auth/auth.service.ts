@@ -17,7 +17,8 @@ export class AuthService {
     weight: null,
     sport: "",
     role: "",
-    location: ""
+    location: "",
+    bio: ""
   };
 
   private currentClientSource;

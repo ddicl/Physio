@@ -28,4 +28,8 @@ export class ClientService {
   getTrainers(): Observable<Client[]> {
     return this.http.get<Client[]>(this.trainerUrl);
   }
+
+  getTrainer(trainerName): Observable<Client> {
+    return this.http.get<Client>(this.clientUrl + trainerName);
+  }
 }
