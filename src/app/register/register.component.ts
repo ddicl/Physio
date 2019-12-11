@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from  '@angular/forms';
 import { ClientService } from '../services/client/client.service';
 import { Client } from '../models/client';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private clientService: ClientService
+    private clientService: ClientService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -58,5 +60,6 @@ export class RegisterComponent implements OnInit {
         }
       )
     }
+    this.router.navigateByUrl('/login');
   }
 }

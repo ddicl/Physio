@@ -13,6 +13,15 @@ export class MeetingComponent implements OnInit {
   client: Client;
   meeting: Meeting;
   meetings: Meeting[];
+  displayedColumns: string[] = [
+    'position',
+    'name',
+    'date',
+    'location',
+    'goals',
+    'clientEmail',
+    'trainerEmail'
+  ];
 
   constructor(
     private meetingService: MeetingService,
