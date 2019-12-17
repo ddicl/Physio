@@ -25,3 +25,21 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Features - 
+
+#### Client 
+
+  - Log in
+  - View Trainers 
+  - Click on Trainer and view their profile
+  - Click link in the trainer's profile to add a meeting 
+  - Add a meeting with the trainer
+  - View their upcoming meetings
+
+#### Trainer 
+
+  - Login 
+  - View their meetings 
+  - View Clients 
+
